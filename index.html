@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <style>
+
+/* Reset básico para evitar margens/paddings inesperados */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Corpo da página */
+body {
+    background-color: #000; /* Fundo preto */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #eee;
+}
+
+/* Container dos vídeos */
+#videos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    max-width: 1200px;
+    width: 100%;
+}
+
+/* Estilo dos iframes */
+iframe {
+    flex: 1 1 300px;
+    max-width: 350px;
+    height: 210px;
+    border: 3px solid #4f46e5;
+    background-color: #5b21b6;
+    box-shadow:
+        0 4px 15px rgba(79, 70, 229, 0.5),
+        0 0 10px rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    display: block; /* garantir que o iframe seja block */
+}
+
+/* Hover no iframe */
+iframe:hover {
+    transform: scale(1.07);
+    box-shadow:
+        0 8px 30px rgba(79, 70, 229, 0.7),
+        0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Botão links */
+a.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4f46e5;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(79, 70, 229, 0.5);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Hover botão */
+a.button:hover {
+    background-color: #4338ca;
+    box-shadow: 0 8px 30px rgba(79, 70, 229, 0.7);
+}
+
+a.button:focus-visible {
+    outline: 3px solid #a5b4fc;
+    outline-offset: 3px;
+}
+
+/* P igual botão */
+p {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: orangered;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(79, 70, 229, 0.5);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    user-select: none;
+    margin: 0;
+    text-align: center;
+}
+
+/* Hover p */
+p:hover {
+    background-color: #4338ca;
+    box-shadow: 0 8px 30px rgba(79, 70, 229, 0.7);
+}
+
+/* Container de anúncios */
+#ads {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 120px;
+    height: 220px;
+    background-color: #fff;
+    color: #111;
+    border-radius: 12px 12px 0 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    font-size: 20px;
+    font-weight: 600;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 9999;
+    user-select: none;
+}
+
+        </style>
+        <!-- Meta tags essenciais -->
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<!-- Título da página -->
+<title>Academia e Exercícios Físicos - Treine Forte e Transforme Seu Corpo</title>
+
+<!-- Descrição para motores de busca -->
+<meta name="description" content="Academia completa com treinos personalizados, aulas de musculação, cardio, pilates e muito mais para sua saúde e bem-estar." />
+
+<!-- Palavras-chave relevantes -->
+<meta name="keywords" content="academia, exercícios físicos, musculação, treino, saúde, fitness, personal trainer, emagrecimento, condicionamento físico, pilates, cardio" />
+
+<!-- Autor -->
+<meta name="author" content="Nome da sua Academia ou Empresa" />
+
+<!-- Meta para redes sociais (Open Graph para Facebook, LinkedIn, etc.) -->
+<meta property="og:title" content="Academia e Exercícios Físicos - Treine Forte e Transforme Seu Corpo" />
+<meta property="og:description" content="Academia completa com treinos personalizados, aulas de musculação, cardio, pilates e muito mais para sua saúde e bem-estar." />
+<meta property="og:type" content="website" />
+
+<meta property="og:image" content="https://www.seusite.com/imagens/capa-academia.jpg" />
+
+<!-- Meta para Twitter Cards -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Academia e Exercícios Físicos - Treine Forte e Transforme Seu Corpo" />
+<meta name="twitter:description" content="Academia completa com treinos personalizados, aulas de musculação, cardio, pilates e muito mais para sua saúde e bem-estar." />
+<meta name="twitter:image" content="https://www.seusite.com/imagens/capa-academia.jpg" />
+<meta name="twitter:site" content="@SeuTwitter" />
+
+<!-- Robots para controle de indexação -->
+<meta name="robots" content="index, follow" />
+
+<!-- Idioma do conteúdo -->
+<meta http-equiv="Content-Language" content="pt-BR" />
+
+<!-- Favicon -->
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+
+
+    </head>
+    <body>
+        <div id="ads">
+            <a href="https://victorxx.github.io/airbnbrandom01/">COMECE NO AIRBNB</a>
+        </div>
+        <div id="videos">
+            
+        </div>
+        <button id="btn">carregar</button>
+        <script>
+            let links=[
+                "https://www.youtube.com/embed/AiO1yQITh70","https://www.youtube.com/embed/XjI80gRI030","https://www.youtube.com/embed/KCGDFNPCU7c","https://www.youtube.com/embed/hNqrfWUw3Io&pp=0gcJCc0JAYcqIYzv","https://www.youtube.com/embed/WQcZ_tWxC_c","https://www.youtube.com/embed/Nku5QYTkSAU","https://www.youtube.com/embed/c0quBSyWf50&pp=0gcJCc0JAYcqIYzv","https://www.youtube.com/embed/ku_8ieWXuS4","https://www.youtube.com/embed/-iY0vPFRWJw","https://www.youtube.com/embed/dHaP-j7IzZw","https://www.youtube.com/embed/3N6lsr-JOcQ","https://www.youtube.com/embed/jPVAEFjmhj4","https://www.youtube.com/embed/yv_711V_d5M","https://www.youtube.com/embed/hMxiBnKSQtc","https://www.youtube.com/embed/JhdR8mzs8XM","https://www.youtube.com/embed/znfPyQ2smzM","https://www.youtube.com/embed/t0WMkfvJjwg","https://www.youtube.com/embed/RXpYX1BFxZA","https://www.youtube.com/embed/xs1tnAJt2Sg","https://www.youtube.com/embed/CvKpkLCBC3E","https://www.youtube.com/embed/sWVnZ5c4nb0","https://www.youtube.com/embed/y8okxzKzSpo","https://www.youtube.com/embed/nfsTjyfqHnU","https://www.youtube.com/embed/6ToNpmns6D8","https://www.youtube.com/embed/t_IiSKxQ9Wk","https://www.youtube.com/embed/dgKBNHLvnpw","https://www.youtube.com/embed/9ZtL45nlprI&pp=0gcJCc0JAYcqIYzv","https://www.youtube.com/embed/OIoEiCKBS50","https://www.youtube.com/embed/5zVrNFUWKCc","https://www.youtube.com/embed/2L3DLI_RJrY","https://www.youtube.com/embed/w0ilUpISRd4","https://www.youtube.com/embed/TgfZUmYmr_g","https://www.youtube.com/embed/2OKZrwQpn5I","https://www.youtube.com/embed/u0lXUE62Tqg","https://www.youtube.com/embed/mx6dcPptURU","https://www.youtube.com/embed/rXMafskUfGM","https://www.youtube.com/embed/GFPSfujZY8k","https://www.youtube.com/embed/Brf2E752pmM","https://www.youtube.com/embed/6y3KfIw6pYQ","https://www.youtube.com/embed/wWuunLya4Rg","https://www.youtube.com/embed/jy7k2OCeXHU","https://www.youtube.com/embed/jkYnGYmh8Qc","https://www.youtube.com/embed/OL1BWoMxnvA","https://www.youtube.com/embed/aUD8cO6A6nA","https://www.youtube.com/embed/Z9GAv2uqp_8","https://www.youtube.com/embed/PajEl2xAhrQ","https://www.youtube.com/embed/6e4qJRs0hOU","https://www.youtube.com/embed/6A6Z0h57ko4","https://www.youtube.com/embed/ahA5WVnh9e4","https://www.youtube.com/embed/0cVFPCMZzgY","https://www.youtube.com/embed/qHuzwJpzj4c","https://www.youtube.com/embed/9x41MiTW7GI","https://www.youtube.com/embed/iRMSGF0Kpws","https://www.youtube.com/embed/FNmFxLGTvUk","https://www.youtube.com/embed/0tATgz7NW4s","https://www.youtube.com/embed/xb1MVQ-49qI","https://www.youtube.com/embed/evlBp8zzpcA","https://www.youtube.com/embed/YPceD_218_w","https://www.youtube.com/embed/1Yg9wnCramQ&pp=0gcJCc0JAYcqIYzv","https://www.youtube.com/embed/S8owxnR4t2k","https://www.youtube.com/embed/y7alNV13uQw","https://www.youtube.com/embed/1PrCDRCKzRI","https://www.youtube.com/embed/gsAU1cdleLM","https://www.youtube.com/embed/AU7ObFldTic","https://www.youtube.com/embed/FVXiNcvCLgA&pp=0gcJCc0JAYcqIYzv","https://www.youtube.com/embed/_LNyCM6-acM","https://www.youtube.com/embed/tqgplypNpxQ&pp=0gcJCc0JAYcqIYzv","https://www.youtube.com/embed/NYLw9V79dEA","https://www.youtube.com/embed/Vt0Q_f60v4o","https://www.youtube.com/embed/VjR1eTuIOsU","https://www.youtube.com/embed/ZLGwOIEc8Xw","https://www.youtube.com/embed/y_JGHzYsvAw","https://www.youtube.com/embed/9Io7-eVLAHs","https://www.youtube.com/embed/YUBTk84VJ7k","https://www.youtube.com/embed/LzcG5bpqJCk","https://www.youtube.com/embed/om16X7Ezi5w","https://www.youtube.com/embed/1OIdMWKEjw8","https://www.youtube.com/embed/6NpQJ9ExWkE","https://www.youtube.com/embed/qGckZfO58vE","https://www.youtube.com/embed/VcIwtYX2Kaw","https://www.youtube.com/embed/k2lI9CRJGR4","https://www.youtube.com/embed/lVrqFnkAqbU","https://www.youtube.com/embed/0oa0J9Aw8mc","https://www.youtube.com/embed/wIAdtsQaD3Y&pp=0gcJCc0JAYcqIYzv","https://www.youtube.com/embed/1VVVAVp7FVs","https://www.youtube.com/embed/YuMLJpb2y9I&pp=0gcJCc0JAYcqIYzv","https://www.youtube.com/embed/tvI459gkORY","https://www.youtube.com/embed/LIvW4r2xxTc&pp=0gcJCc0JAYcqIYzv","https://www.youtube.com/embed/S3PQu4nwRYg","https://www.youtube.com/embed/vXXmCnqYTTc","https://www.youtube.com/embed/cDIbVQi6xnk&pp=0gcJCc0JAYcqIYzv","https://www.youtube.com/embed/BgLl6NNqpRo","https://www.youtube.com/embed/REnAXKVFYg8","https://www.youtube.com/embed/KhvN-XeI-Gc","https://www.youtube.com/embed/psrwLWSykck","https://www.youtube.com/embed/9NcuA21YOY8","https://www.youtube.com/embed/YrjToQkS76Y&pp=0gcJCc0JAYcqIYzv","https://www.youtube.com/embed/te-eUhBLDEQ","https://www.youtube.com/embed/ruNl43zChh4","https://www.youtube.com/embed/YEu4qhyJXmE","https://www.youtube.com/embed/vYT8Jx6HOaY","https://www.youtube.com/embed/8ICjhj-HefI","https://www.youtube.com/embed/KBZ5RBTPetQ","https://www.youtube.com/embed/m4ZdSy0wk7U","https://www.youtube.com/embed/20CP1iTOZGM","https://www.youtube.com/embed/lgh0adlBlNQ","https://www.youtube.com/embed/RimcrxN4FEM","https://www.youtube.com/embed/KmoIFjftXPE&pp=0gcJCc0JAYcqIYzv","https://www.youtube.com/embed/ORQQGvttOXo","https://www.youtube.com/embed/sutEZTmWvhk","https://www.youtube.com/embed/LSG3XCxhFyU","https://www.youtube.com/embed/c7qcs3cTL0I","https://www.youtube.com/embed/PM2Faw4pFCY","https://www.youtube.com/embed/xHEAkm4wbhc","https://www.youtube.com/embed/y7i3sqaYsts","https://www.youtube.com/embed/21EamanfDLQ","https://www.youtube.com/embed/Ppr2MK5O_og","https://www.youtube.com/embed/Fl8nosDQPOQ","https://www.youtube.com/embed/UiQdovA0cGw","https://www.youtube.com/embed/01GjtS__byY","https://www.youtube.com/embed/ANx5PlbH9Zc&pp=0gcJCc0JAYcqIYzv","https://www.youtube.com/embed/NGFaCrgIt68","https://www.youtube.com/embed/re6IGKefMmg&pp=0gcJCc0JAYcqIYzv","https://www.youtube.com/embed/EW3YQmGkEMs","https://www.youtube.com/embed/B4HpWyj8wXc","https://www.youtube.com/embed/uOGrWEZ98TM","https://www.youtube.com/embed/MfwyuTahR0M","https://www.youtube.com/embed/CmxtrMoQgFk","https://www.youtube.com/embed/ObcJSGQwJ2k","https://www.youtube.com/embed/RTO5EJRjHik","https://www.youtube.com/embed/pn7nemhILno","https://www.youtube.com/embed/TNC5hA14EI4","https://www.youtube.com/embed/r7u0fBbTHdU&pp=0gcJCc0JAYcqIYzv","https://www.youtube.com/embed/U-4ICo8OSB8","https://www.youtube.com/embed/UwIhycBGrXM","https://www.youtube.com/embed/xa81apYwiro","https://www.youtube.com/embed/YR5uKYXvKuM","https://www.youtube.com/embed/JcF_WtvUBNA","https://www.youtube.com/embed/sEzWQ0sWG-o&pp=0gcJCc0JAYcqIYzv","https://www.youtube.com/embed/ROQwdGOvdOo","https://www.youtube.com/embed/6qK2sUN4DPw","https://www.youtube.com/embed/NNXhgJi4ejw","https://www.youtube.com/embed/Kmo_19e2zws","https://www.youtube.com/embed/bnWwLAOWtVk","https://www.youtube.com/embed/uC42eU7AJ6Q","https://www.youtube.com/embed/u2bkmb238Og","https://www.youtube.com/embed/gHkNfyiI57s","https://www.youtube.com/embed/8T3EcPaIY9c","https://www.youtube.com/embed/xsMdaIqA11M","https://www.youtube.com/embed/lqZ1PgH7t9c","https://www.youtube.com/embed/Kh93XdJ1xy4&pp=0gcJCc0JAYcqIYzv","https://www.youtube.com/embed/s_1N5vUuUB4","https://www.youtube.com/embed/4iY0bsFx81s","https://www.youtube.com/embed/bjZaRPL8n3o","https://www.youtube.com/embed/1Q9efQAG2RE","https://www.youtube.com/embed/nplk-UBa0PY","https://www.youtube.com/embed/OmDjs48iAEs","https://www.youtube.com/embed/kMyZSNl31Rk","https://www.youtube.com/embed/5Ace7ewk_8Y","https://www.youtube.com/embed/EHvsnCOFopA","https://www.youtube.com/embed/YFIHPc1yInM","https://www.youtube.com/embed/z5SmhnYdBpc","https://www.youtube.com/embed/ZtdhADef-6g","https://www.youtube.com/embed/Agz3V_C954M","https://www.youtube.com/embed/aj_x743Z-d4","https://www.youtube.com/embed/hIxyHKBq_Uc","https://www.youtube.com/embed/_A4nnOhpdLE","https://www.youtube.com/embed/oKznnMuS0QE","https://www.youtube.com/embed/N0j7WUN_9Qo","https://www.youtube.com/embed/RLNHG1WIU6s","https://www.youtube.com/embed/Fz-j0SCAZJA","https://www.youtube.com/embed/zTHdnmuKIMo&pp=0gcJCc0JAYcqIYzv","https://www.youtube.com/embed/uOFM2LAfO64","https://www.youtube.com/embed/JduOUyhoq1g","https://www.youtube.com/embed/JwCSbtOKJEE","https://www.youtube.com/embed/GehAEhpYD5Q&pp=0gcJCc0JAYcqIYzv","https://www.youtube.com/embed/XBG2I7ksiFc","https://www.youtube.com/embed/mToaPfOY4cM","https://www.youtube.com/embed/9kyiv-hSiQ0","https://www.youtube.com/embed/KMv_mTIIHYQ","https://www.youtube.com/embed/stFU8dNXVUM","https://www.youtube.com/embed/ByDAihB4FOk","https://www.youtube.com/embed/C_CZtBwqH6Q","https://www.youtube.com/embed/-R3QO8jm0Kk","https://www.youtube.com/embed/8-sUTjLnt4g","https://www.youtube.com/embed/VjgmRSBfbFg","https://www.youtube.com/embed/VbEavutkni4","https://www.youtube.com/embed/vArcMBrnU7w","https://www.youtube.com/embed/vuk8eWvYEOk","https://www.youtube.com/embed/fe25pkBbiFM","https://www.youtube.com/embed/nlWvAIolfEE","https://www.youtube.com/embed/ZBQanhtje68","https://www.youtube.com/embed/sj0RwF_bvE8","https://www.youtube.com/embed/1Jowd9OdOz4","https://www.youtube.com/embed/UuA9Vgqfubs","https://www.youtube.com/embed/kAybP23XB1g","https://www.youtube.com/embed/5xL4kd5m-Qo","https://www.youtube.com/embed/ddlEf1N84nk","https://www.youtube.com/embed/bGF0yj-lsLc&pp=0gcJCc0JAYcqIYzv","https://www.youtube.com/embed/8OC7vpkhF04","https://www.youtube.com/embed/NyLp5eOfzLU&pp=0gcJCc0JAYcqIYzv","https://www.youtube.com/embed/6VW_3RaG_J8","https://www.youtube.com/embed/JQpqnn-Fu2M","https://www.youtube.com/embed/2rzZjPabs6A","https://www.youtube.com/embed/whUeA1GcU5Q","https://www.youtube.com/embed/EF1O3AylNXo","https://www.youtube.com/embed/6gkG4S_fYus","https://www.youtube.com/embed/PTp3oI_cjao","https://www.youtube.com/embed/i_VICZMrddA&pp=0gcJCc0JAYcqIYzv","https://www.youtube.com/embed/wiecwLD-3CM","https://www.youtube.com/embed/5pj5sfNpx8A","https://www.youtube.com/embed/F70WqRi4JTo","https://www.youtube.com/embed/-aVu_WVaoHM","https://www.youtube.com/embed/hkSY0Dj4lF8","https://www.youtube.com/embed/q5Xg9ylJK4E","https://www.youtube.com/embed/bZXqHdp-PcQ","https://www.youtube.com/embed/hTvFdJBu1JU","https://www.youtube.com/embed/4rR6e4ZIRYY","https://www.youtube.com/embed/BgQNcx04kNo","https://www.youtube.com/embed/e75GJ3X7-6Y","https://www.youtube.com/embed/KNHhOsQ_pH4","https://www.youtube.com/embed/J7UFLFB9_1U","https://www.youtube.com/embed/kt_815cg_Mc","https://www.youtube.com/embed/cHWW4cLp36E&pp=0gcJCc0JAYcqIYzv","https://www.youtube.com/embed/iV_D5UfaXA4","https://www.youtube.com/embed/6gr6UYsjkS4","https://www.youtube.com/embed/seBJVgOfZyA","https://www.youtube.com/embed/liA3i9GGwzQ","https://www.youtube.com/embed/xpixAeoT1rc","https://www.youtube.com/embed/Rh07OTIkEk8","https://www.youtube.com/embed/ZnjDl12Bd9c","https://www.youtube.com/embed/BEE0R7L2UUI","https://www.youtube.com/embed/JHRTlhMptks","https://www.youtube.com/embed/mWqMu7cjbt4","https://www.youtube.com/embed/GR-zjf9apLg","https://www.youtube.com/embed/8jiplbIfUOo&pp=0gcJCc0JAYcqIYzv","https://www.youtube.com/embed/FdRIIgWjtes","https://www.youtube.com/embed/gvLG5GgIfxI","https://www.youtube.com/embed/TLh__y5-hBE","https://www.youtube.com/embed/-_zz6JXI2HQ","https://www.youtube.com/embed/pm3n0O9Nz_g","https://www.youtube.com/embed/0eyT7NGHXW4","https://www.youtube.com/embed/UfyJiOZBrcI","https://www.youtube.com/embed/AhR6c3u3Ylg","https://www.youtube.com/embed/xUhu2VrLqiQ","https://www.youtube.com/embed/WeAc6c6Ilpc","https://www.youtube.com/embed/k2nO8oZEHN0","https://www.youtube.com/embed/HZWNjDtwQfw","https://www.youtube.com/embed/3QB6wfbtFB4&pp=0gcJCc0JAYcqIYzv","https://www.youtube.com/embed/NeNniiav4Xo","https://www.youtube.com/embed/UObdpw-k3Bw","https://www.youtube.com/embed/x055yzYegME","https://www.youtube.com/embed/sGLPGkVm-rI","https://www.youtube.com/embed/clfgXXmOT5Q&pp=0gcJCc0JAYcqIYzv","https://www.youtube.com/embed/L6g5L85_-2o","https://www.youtube.com/embed/6C1q8N8BOn0","https://www.youtube.com/embed/g2ohRMxbz_c","https://www.youtube.com/embed/Ktp4q0Tu7hQ","https://www.youtube.com/embed/cd48PFzfoV8","https://www.youtube.com/embed/hZ2IQ1Daeys","https://www.youtube.com/embed/c2BMEZXDMFQ","https://www.youtube.com/embed/WVQwI6it030","https://www.youtube.com/embed/lM1zWVDSORU","https://www.youtube.com/embed/ZGAR7hu-7S0","https://www.youtube.com/embed/58Y2RTGb6-c","https://www.youtube.com/embed/zT4_AjXqM_0","https://www.youtube.com/embed/gjfQxHwQcPo","https://www.youtube.com/embed/ICknPEL5wro","https://www.youtube.com/embed/wJBof_K85YY","https://www.youtube.com/embed/Mpv53p_RSPg","https://www.youtube.com/embed/ay9RFwGk2-U","https://www.youtube.com/embed/Ltt29FaG7Z8","https://www.youtube.com/embed/RIOs7sCB-iU","https://www.youtube.com/embed/6yLFEyeRaXQ","https://www.youtube.com/embed/ZKFv1SpeLdc&pp=0gcJCc0JAYcqIYzv","https://www.youtube.com/embed/zzflJTZg3I8","https://www.youtube.com/embed/qf3U1afSqJg&pp=0gcJCc0JAYcqIYzv","https://www.youtube.com/embed/tLgdJaqyI74","https://www.youtube.com/embed/TqSWx63QBYE","https://www.youtube.com/embed/6FTSLH42QSQ","https://www.youtube.com/embed/0_Nvc965IjU","https://www.youtube.com/embed/S6RKPD4cq9g","https://www.youtube.com/embed/kkVyfVs_C8w","https://www.youtube.com/embed/abuiEPfnl3c","https://www.youtube.com/embed/O5FKEqIFfMQ&pp=0gcJCc0JAYcqIYzv","https://www.youtube.com/embed/vF1VJx4J2zQ","https://www.youtube.com/embed/4WfGyw7K5Oo","https://www.youtube.com/embed/MCugZFZkEXw","https://www.youtube.com/embed/TrXLeeKIZJU","https://www.youtube.com/embed/HZ7QJqVkVvg","https://www.youtube.com/embed/WQh55JvIcqs","https://www.youtube.com/embed/T0J20FwiMkE","https://www.youtube.com/embed/6pXwzJlmqW0","https://www.youtube.com/embed/6hln25-Fbeg","https://www.youtube.com/embed/-zdmzSr4RmY","https://www.youtube.com/embed/oaS26MxCKGI","https://www.youtube.com/embed/z4mq7KGLwyM","https://www.youtube.com/embed/QbeoxZwXt68","https://www.youtube.com/embed/eNsZkkfm9Ys&pp=0gcJCc0JAYcqIYzv","https://www.youtube.com/embed/m_7KJ6QH7yE","https://www.youtube.com/embed/Pjn5fVIq4og","https://www.youtube.com/embed/RoKt8F_57Lc","https://www.youtube.com/embed/Y8YpTYirBAk","https://www.youtube.com/embed/u4cuD4IP2qk","https://www.youtube.com/embed/PRSh8ivGYIc","https://www.youtube.com/embed/Q7N10yxTsr8","https://www.youtube.com/embed/xBTr6XXg1L4&pp=0gcJCc0JAYcqIYzv","https://www.youtube.com/embed/NI-fnhDeQ7I&pp=0gcJCc0JAYcqIYzv","https://www.youtube.com/embed/NjFNNGNL9o0","https://www.youtube.com/embed/jgoYbnXsfIo","https://www.youtube.com/embed/-HM0W9GgY7g","https://www.youtube.com/embed/yfvY9t-y0Mc","https://www.youtube.com/embed/E4vnuvtUW84","https://www.youtube.com/embed/D86hqQ9vGQU","https://www.youtube.com/embed/QI7IjRc3zYE","https://www.youtube.com/embed/kYopjlfRC8M","https://www.youtube.com/embed/DTe4zC3FVNo","https://www.youtube.com/embed/D_13qk20EJY&pp=0gcJCc0JAYcqIYzv","https://www.youtube.com/embed/5rKGhbp0mZM","https://www.youtube.com/embed/jfJh7YSf8sc","https://www.youtube.com/embed/BZkSTqeKELE","https://www.youtube.com/embed/LxcN33NTyFk","https://www.youtube.com/embed/kGXvVEWt05Y","https://www.youtube.com/embed/ftNr4XNEsQg","https://www.youtube.com/embed/SvkgtvHEHGE","https://www.youtube.com/embed/Tg0i25cx4hg","https://www.youtube.com/embed/zHXUAeUGWig","https://www.youtube.com/embed/KPB7IYfw_yE"
+            ];
+            let index=0;
+            let pular=0;
+            let limiteindex=1;
+            let botao=document.getElementById('btn');
+            let video=document.getElementById('videos');
+            function inserir(){
+                let fim=index+limiteindex;
+                for(;index<fim && index<links.length;index++){
+                    let iframe=document.createElement('iframe');
+                    iframe.src=links[index];
+                    iframe.frameBorder='0';
+                    video.appendChild(iframe); // Adiciona o iframe
+                    pular++;     
+                    if(pular==2) {
+                        const propaganda2=document.createElement('p');
+                        propaganda2.innerHTML=`<a href="https://geocredibnkvitoria.com/"> ESTÁ PRECISANDO DE ->CRÉDITO PESSOAL</a>`;
+                        videos.appendChild(propaganda2);
+                    }  
+                    if(pular==3){
+                        const propaganda2=document.createElement('p');
+                        propaganda2.innerHTML=`<a href="https://victorxx.github.io/VPSVENDA/contatoroberto.html"> SEGUROS E ETC.....</a>`;
+                        videos.appendChild(propaganda2);
+
+                    }           // Conta mais um
+
+                    if (pular === 5) {
+                            const pularLinha = document.createElement('br');
+                            const propaganda=document.createElement('p');
+                            propaganda.innerHTML=`<a href="https://victorxx.github.io/redirecionae00/">CONFERIR A OPORTUNIDADE</a>`;
+                            video.appendChild(pularLinha);
+                            videos.appendChild(propaganda); // Adiciona quebra de linha
+                            pular = 0; // Reseta o contador e volta ao normal
+                        }
+                    if(pular===4){
+                         const propaganda2=document.createElement('p');
+                        propaganda2.innerHTML=`<a href="https://victorxx.github.io/topicogithub01/randomizador.html"> CONFIRA A OPORTUNIDADE.....</a>`;
+                        videos.appendChild(propaganda2);
+
+                    }
+                    
+
+                   
+                }
+                if(index>=links.length){
+                    botao.disabled=true;
+                    botao.textContent='chegou no limite';
+                }
+            }
+            botao.addEventListener('click',inserir);
+        </script>
+    </body>
+</html>
